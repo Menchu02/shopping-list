@@ -1,0 +1,12 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

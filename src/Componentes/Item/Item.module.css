@@ -1,0 +1,31 @@
+.item {
+  list-style: none;
+  color: white;
+  font-size: larger;
+  font-weight: 500;
+  height: 60px;
+  width: 230px;
+  border-radius: 15px;
+  border: solid 3px black;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.iconsContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.editIcon {
+  color: white;
+}
+
+.verde {
+  background-color: rgba(33, 85, 33, 0.8);
+}
+.rojo {
+  background-color: red;
+}

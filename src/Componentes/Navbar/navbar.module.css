@@ -1,0 +1,22 @@
+.navContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+  gap: 15px;
+  
+}
+.textNavbar {
+  width: 35vw;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+
+.navImage {
+  width: 170px;
+}
