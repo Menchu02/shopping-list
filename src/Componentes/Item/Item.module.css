@@ -1,3 +1,5 @@
+/* src/Componentes/Item/Item.module.css */
+
 .item {
   list-style: none;
   color: white;
@@ -9,9 +11,10 @@
   border: solid 3px black;
   display: flex;
   align-items: center;
-  text-align: center;
+  /* text-align: center; Removido, `justify-content` y `align-items` son mejores para flexbox */
   justify-content: space-between;
   padding: 0 30px;
+  box-sizing: border-box; /* Asegura que padding y border no aumenten el width/height */
 }
 
 .iconsContainer {
@@ -20,12 +23,68 @@
 }
 
 .editIcon {
-  color: white;
+  cursor: pointer;
+}
+.iconColorWhite {
+  color: white; /* Para ítems con fondo verde */
+}
+
+.iconColorBlack {
+  color: black; /* Para ítems con fondo blanco */
 }
 
 .verde {
   background-color: rgba(33, 85, 33, 0.8);
 }
+
 .rojo {
   background-color: red;
+}
+
+/* --- ESTILOS PARA EL MODO DE EDICIÓN --- */
+.editModeControls {
+  display: flex; /* CRUCIAL: Para que el input y los iconos estén en línea */
+  align-items: center; /* CRUCIAL: Centra verticalmente los elementos */
+  gap: 10px; /* Espacio entre los elementos */
+  height: 60px; /* Mantener la altura consistente con .item */
+  width: 230px; /* Mantener el ancho consistente con .item */
+  border-radius: 15px;
+  border: solid 3px black;
+  padding: 0 30px;
+  background-color: #fefcfb; /* Fondo cuando está editando */
+  justify-content: space-between; /* Distribuye espacio */
+  box-sizing: border-box; /* Asegura que padding y border no aumenten el width/height */
+}
+
+.editInput {
+  width: 105px;
+  height: 35px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  font-size: 16px !important; /* <-- CAMBIADO: Usamos un tamaño fijo en px y !important para forzarlo */
+  box-sizing: border-box;
+}
+
+.saveIcon,
+.cancelIcon {
+  cursor: pointer;
+  font-size: 1.5em; /* Esto debería darles un tamaño base */
+  /* Asegúrate de que el color afecte al 'fill' o 'stroke' */
+  fill: currentColor; /* Asegura que el color CSS se aplique al relleno del SVG */
+  stroke: currentColor; /* Asegura que el color CSS se aplique al contorno del SVG */
+}
+
+.saveIcon {
+  color: green; /* Mantén esto */
+  /* Si el color verde no se ve, fuerza el fill y stroke aquí también */
+  fill: green;
+  stroke: green;
+}
+
+.cancelIcon {
+  color: gray; /* Mantén esto */
+  /* Si el color gris no se ve, fuerza el fill y stroke aquí también */
+  fill: gray;
+  stroke: gray;
 }

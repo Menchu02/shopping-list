@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Item from '../Item/Item';
-import Navbar from '../Navbar/Navbar';
+
 import ProductForm from '../ProductForm/ProductForm';
 import styles from './itemList.module.css';
 import { v4 as uuid } from 'uuid';
@@ -45,11 +45,22 @@ export default function ItemList() {
     //añado esta nueva data al setProducts para hacer el cambio de estado
     setProducts(newData);
   };
-  //EDITAR
-  const editById = (idItem) => {
-    idToModify = idItem;
-    console.log(idToModify);
+  // //EDITAR
+  // const editById = (idItem) => {
+  //   idToModify = idItem;
+  //   console.log(idToModify);
+  // };
+  // --- FUNCIÓN EDITAR (MODIFICADA) ---
+  const editById = (idItem, newName) => {
+    // ¡Ahora recibimos el newName!
+    setProducts(
+      products.map(
+        (item) =>
+          item.id === idItem ? { ...item, name: newName.trim() } : item // Actualiza el 'name'
+      )
+    );
   };
+
   //AÑADIR
   const addItem = (value) => {
     console.log(value);
@@ -64,7 +75,6 @@ export default function ItemList() {
   return (
     <div>
       <div className={styles.mainContainer}>
-        <Navbar />
         <ProductForm addItem={addItem} />
         <ul className={styles.itemContainer}>
           {products.map((item) => (
